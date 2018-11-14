@@ -1,34 +1,35 @@
 <template>
     <div id="app">
         <el-container class="orion-main">
-            <el-aside width="96px">
+            <el-aside width="64px">
                 <div class="orion-logo-menu">
                     <img src="./assets/logo.png" width="36" height="36" class="orion-middle"/>
                 </div>
-                <el-menu :default-active="activeCourseIndex" class="el-menu-vertical-demo" :collapse="isCollapse"
+                <el-menu :default-active="activeCourseIndex" class="el-menu-vertical" :collapse="isCollapse"
                          @select="handleNavSelect">
                     <el-menu-item index="0">
                         <i class="fa fa-reddit-alien fa-2x"></i>
+                        <span slot="title">{{$t('nav.welcome')}}</span>
                     </el-menu-item>
                     <el-menu-item index="1">
-                        <i class="el-icon-location"></i>
-                        <span slot="title">项目</span>
+                        <i class="fa fa-server fa-2x"></i>
+                        <span slot="title">{{$t('nav.project')}}</span>
                     </el-menu-item>
                     <el-menu-item index="2">
-                        <i class="el-icon-menu"></i>
-                        <span slot="title">社区</span>
+                        <i class="fa fa-comments fa-2x"></i>
+                        <span slot="title">{{$t('nav.community')}}</span>
                     </el-menu-item>
                     <el-menu-item index="3">
-                        <i class="el-icon-document"></i>
-                        <span slot="title">设置</span>
+                        <i class="fa fa-cogs fa-2x"></i>
+                        <span slot="title">{{$t('nav.setting')}}</span>
                     </el-menu-item>
                     <el-menu-item index="4">
-                        <i class="el-icon-setting"></i>
-                        <span slot="title">帮助</span>
+                        <i class="fa fa-question-circle fa-2x"></i>
+                        <span slot="title">{{$t('nav.help')}}</span>
                     </el-menu-item>
                      <el-menu-item index="5">
-                        <i class="el-icon-setting"></i>
-                        <span slot="title">关于</span>
+                        <i class="fa fa-info-circle fa-2x"></i>
+                        <span slot="title">{{$t('nav.about')}}</span>
                     </el-menu-item>
                 </el-menu>
             </el-aside>
@@ -60,9 +61,9 @@
                 <el-main>
                     <router-view v-if="isRouterAlive"/>
                 </el-main>
-                <el-footer>
-                    <h4><span class="orion-version">{{ appTitle }}</span>{{ copyright }}</h4>
-                </el-footer>
+                <!--<el-footer>-->
+                    <!--<h4><span class="orion-version">{{$t('common.appTitle')}}</span>{{$t('common.copyright')}}</h4>-->
+                <!--</el-footer>-->
             </el-container>
         </el-container>
         <el-dialog title="学生信息" :visible.sync="dialogInfoVisible">
@@ -179,7 +180,7 @@
         vertical-align: middle;
     }
 
-    .el-menu-vertical-demo {
+    .el-menu-vertical {
         height: 100%;
     }
 
@@ -205,7 +206,7 @@
         text-align: center;
         line-height: 160px;
         padding: 0;
-        height: 100%;
+        //height: 100%;
     }
 
     body > .el-container {
@@ -225,6 +226,7 @@
     .el-form-item {
         text-align: left;
     }
+
 </style>
 
 <script>
@@ -241,7 +243,7 @@
         appTitle: "",
         copyright: "",
         activeCourseIndex: "0",
-        isCollapse: false,
+        isCollapse: true,
         dialogInfoVisible: false,
         profile: {
           name: "",
