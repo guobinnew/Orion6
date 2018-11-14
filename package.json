@@ -8,6 +8,7 @@
     "debug": "electron . --debug --enable-logging",
     "test": "mocha",
     "build": "./node_modules/.bin/webpack --config ./build/webpack.config.js",
+    "publish": "./node_modules/.bin/webpack --config ./build/webpack.publish.config.js",
     "nodemon:server": "cross-env NODE_ENV=development && ./node_modules/.bin/nodemon --config ./build/nodemon.json ./server/index.js"
   },
   "author": "",
@@ -21,6 +22,7 @@
     "cross-env": "^5.2.0",
     "crypto-js": "^3.1.9-1",
     "ejs": "^2.6.1",
+    "electron": "^3.0.7",
     "express": "^4.16.3",
     "express-formidable": "^1.0.0",
     "express-partials": "^0.3.0",

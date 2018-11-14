@@ -19,8 +19,9 @@
   } else if (process.argv.indexOf('debug') >=0 ) {
     debug = true
   }
-  console.log(process.argv)
-  
+
+  var serverPort = debug ? 7781 : 7780
+
   var rootDir = path.join(__dirname, debug ? '../dist/frontend' : '../frontend')
   app.use('/', express.static(rootDir))
   app.use(bodyParser.urlencoded({
@@ -82,8 +83,8 @@
     ]
   }));
 
-  var server = app.listen(settings.server.port, function() {
-    console.log('info', '本地前台服务器启动，正在监听端口<' + settings.server.port + '>...')
+  var server = app.listen(serverPort, function() {
+    console.log('info', '本地前台服务器启动，正在监听端口<' + serverPort + '>...')
   })
 
 }());

@@ -321,7 +321,6 @@
         success: (data) => {
           if (data.result == 0) {
             this.$store.commit("updateManifest", data.content);
-            this.updateProfile();
             this.updateFooter();
           } else {
             this.$message.error('读取配置信息失败，请退出重试')
