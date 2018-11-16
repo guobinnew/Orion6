@@ -206,7 +206,7 @@
         text-align: center;
         line-height: 160px;
         padding: 0;
-        //height: 100%;
+        height: 100%;
     }
 
     body > .el-container {
@@ -231,10 +231,7 @@
 
 <script>
   import ElContainer from "../node_modules/element-ui/packages/container/src/main";
-  import logger from "./logger";
-  import yuchg from "./base";
-  import ycUtils from './utils';
-  logger.setLevel("debug");
+  import utils from './utils';
 
   export default {
     components: {ElContainer},
@@ -318,7 +315,7 @@
     },
     mounted: function () {
       // 读取配置信息，初始化状态
-      ycUtils.ajaxGet({
+      utils.ajaxGet({
         url: "/api/v1/manifest",
         success: (data) => {
           if (data.result == 0) {

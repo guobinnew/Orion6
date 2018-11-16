@@ -1,5 +1,4 @@
-import yuchg from './base'
-import logger from './logger'
+import yuchg from 'yuchg'
 import CryptoJS from 'crypto-js'
 import $ from "jquery"
 
@@ -21,7 +20,7 @@ const utils = {
       success: function(data) {
         option.success(data)
       }
-    });
+    })
   },
   ajaxGet: function (option) {
     $.ajax({
@@ -31,7 +30,7 @@ const utils = {
       success: function(data) {
         option.success(data)
       }
-    });
+    })
   }
 }
 

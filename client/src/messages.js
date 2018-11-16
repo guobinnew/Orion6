@@ -1,7 +1,7 @@
 /**
  * Created by unique on 2018/11/14.
  */
-import yuchg from './base'
+import yuchg from 'yuchg'
 
 const _messages = {
   common: {

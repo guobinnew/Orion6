@@ -111,9 +111,8 @@
 </style>
 
 <script>
-  import logger from "../logger";
-  import yuchg from "../base";
-  import ycUtils from '../utils'
+  import yuchg from "yuchg";
+  import utils from '../utils'
   import echarts from "echarts";
   import resize from 'vue-resize-directive'
   import CryptoJS from "crypto-js";
@@ -204,7 +203,7 @@
       },
       fetchRecords() {
         // 读取成绩
-        ycUtils.ajaxGet({
+        utils.ajaxGet({
           url: this.queryUrl,
           success: (data) => {
             if (data.result === 0) {
